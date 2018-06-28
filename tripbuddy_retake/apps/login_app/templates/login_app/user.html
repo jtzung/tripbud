@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users Posts</title>
+</head>
+    <body>
+        {% for trip in trips %}
+        <div>
+        <h1>{{trip.destination}}</h1>
+    
+    
+            <p>Planned by: {{trip.uploader.first_name}}</p>
+            <p>Description: {{trip.destination}}</p>
+            <p>Travel Date From: {{trip.travel_from}}</p>
+            <p>Travel Date To: {{trip.travel_to}}</p>
+        {% endfor %}
+            <h2>Others Joining the Trip:</h2>
+            {% for join in joined %}
+            <ul>
+                <li>"{{join.first_name}} {{join.last_name}}"</li>
+            </ul>
+            {% endfor %}    
+        </div>
+    
+        <a href='home'>Go Back</a> | <a href='/logout'>Logout</a>
+
+    </body>
+</html>
